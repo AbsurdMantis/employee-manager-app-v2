@@ -43,10 +43,10 @@ ou ```CTRL+C```
 # Atividade
 
 1. Como exibido na imagem do arquivo _views.py_, não há nenhuma estratégia de cache no app frontend. 
-Use o memcached (como exibido no exemplo de aula) para adicionar uma estratégia de cache de baixo nível nas funções 'views.usuarios' e 'views.detalhes'. 
+Use o memcached (como exibido no exemplo da aula) para adicionar uma estratégia de cache de baixo nível nas funções 'views.usuarios' e 'views.detalhes'. 
 Utilize o 'json' obtido da API para ser a informação salva no cache. 
 
-2. A aplicação de backend possui uma bateria de testes no arquivo backend/luizalabs/api/tests.py . Utilize o workflow do github (github action) para executar esse teste toda vez que o repositório seja modificado. Essa abordagem vai facilitar a detecção de códigos com bugs (para ver como executar os testes, acesso o [README](https://github.com/rodrigoclira/employee-manager-app-v1) do repositório original). 
+2. A aplicação de backend possui uma bateria de testes no arquivo backend/luizalabs/api/tests.py . Utilize o workflow do github (github action) para executar esse teste toda vez que o repositório for modificado. Essa abordagem vai facilitar a detecção de códigos com bugs (para ver como executar os testes, acesso o [README](https://github.com/rodrigoclira/employee-manager-app-v1) do repositório original). 
 > Para mais informações de como proceder, leia [Configurando o github actions](https://cassiobotaro.dev/do_zero_a_implantacao/integracao/#configurando-o-github-actions)
 
 
