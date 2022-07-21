@@ -1,4 +1,6 @@
 from rest_framework import generics
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 from .serializers import EmployeeListSerializer
 from .models import EmployeeList
 
@@ -17,6 +19,7 @@ class CreateView(generics.ListCreateAPIView):
 
 #Essa classe será responsável por manipular os métodos http: GET, PUT e DELETE:
 # O 'RetrieveUpdateDestroyAPIView' é uma view genérica que provê os métodos: GET (by Id), PUT, PATCH & DELETE
+@method_decorator(cache_page(60*60*2))
 class DetailsView(generics.RetrieveUpdateDestroyAPIView):
     queryset = EmployeeList.objects.all()
     serializer_class = EmployeeListSerializer

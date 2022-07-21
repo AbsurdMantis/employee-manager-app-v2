@@ -121,4 +121,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField' #Evitando o warning de PK não definida
+# Evitando o warning de PK não definida
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+# Cache
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
