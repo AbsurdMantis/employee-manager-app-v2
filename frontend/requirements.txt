@@ -6,3 +6,4 @@ idna==3.3
 requests==2.28.0
 sqlparse==0.4.2
 urllib3==1.26.9
+pymemcache==3.5.2

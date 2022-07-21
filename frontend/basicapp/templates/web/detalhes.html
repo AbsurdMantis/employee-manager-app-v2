@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+
 {% block title %}Página de Usuários{% endblock %}
 
 {% block content %}
@@ -14,7 +15,7 @@
                 <div class="card-body" id="{{employee.id}}">
                     <h5 class="card-title" id="{{employee.id}}"> {{ employee.name }} ({{ employee.department }})</h5>
                     <p class="card-text email" id="{{employee.id}}">{{ employee.email }}</p>  
-                    <a href="#" class="btn btn-primary">Excluir</a>
+                    <a href="{% url 'web:delete' employee.id  %}" class="btn btn-primary">Excluir</a>
                 </div>
             </div>
          </div>

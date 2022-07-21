@@ -19,7 +19,17 @@ class CreateView(generics.ListCreateAPIView):
 
 #Essa classe será responsável por manipular os métodos http: GET, PUT e DELETE:
 # O 'RetrieveUpdateDestroyAPIView' é uma view genérica que provê os métodos: GET (by Id), PUT, PATCH & DELETE
-@method_decorator(cache_page(60*60*2))
 class DetailsView(generics.RetrieveUpdateDestroyAPIView):
     queryset = EmployeeList.objects.all()
     serializer_class = EmployeeListSerializer
+    
+    def destroy(self, request, *args, **kwargs):
+        return super().destroy(request, *args, **kwargs)
+
+    @method_decorator(cache_page(60*60*2))
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+
+    @method_decorator(cache_page(60*60*2))
+    def retrieve(self, request, *args, **kwargs):
+        return super().retrieve(request, *args, **kwargs) 
